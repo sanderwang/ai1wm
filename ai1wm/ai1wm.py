@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-Unpacks an `All-in-One WP Migration` package. For more information:
+Packs/Unpacks `All-in-One WP Migration` packages. For more information:
 https://wordpress.org/plugins/all-in-one-wp-migration/
 """
 
@@ -10,12 +10,6 @@ import json
 import os
 import six
 import struct
-
-
-__all__ = [
-    'Ai1wmError',
-    'Ai1wmPackage',
-]
 
 
 def s__(obj):
