@@ -78,8 +78,8 @@ class Ai1wmHeader(tuple):
         return super(Ai1wmHeader, cls).__new__(cls, [path, name, size, time])
 
     @classmethod
-    def parse(cls, header):
-        """ Parses a raw header. """
+    def unpack(cls, header):
+        """ Unpacks a binary header. """
 
         if len(header) != cls.SIZE:
             raise Ai1wmError('invalid header size')
@@ -94,8 +94,8 @@ class Ai1wmHeader(tuple):
             time=cls.__extract_int(header, cls._LOC_TIME),
         )
 
-    def unparse(self):
-        """ Builds a raw binary header. """
+    def pack(self):
+        """ Packs to a binary header. """
 
         attributes, formats, locations = [], '', [
             ('name', self._LOC_NAME),
@@ -199,7 +199,7 @@ class Ai1wmUnpacker(object):
         """ Unpacks a package. """
 
         while True:
-            header = Ai1wmHeader.parse(stream.read(Ai1wmHeader.SIZE))
+            header = Ai1wmHeader.unpack(stream.read(Ai1wmHeader.SIZE))
             if header.eof:
                 break
 
@@ -236,7 +236,7 @@ class Ai1wmPacker(object):
             size=os.path.getsize(full_path),
             time=int(os.path.getmtime(full_path)),
         )
-        stream.write(header.unparse())
+        stream.write(header.pack())
 
         with open(full_path, 'rb') as f:
             while True:
