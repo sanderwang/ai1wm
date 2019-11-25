@@ -280,7 +280,6 @@ class Ai1wmPackage(object):
         self.base_dir = base_dir
         self._details = None
         self._plugins = None
-        self._theme = None
 
     @property
     def info_file(self):
@@ -324,17 +323,16 @@ class Ai1wmPackage(object):
         return self._plugins
 
     @property
-    def theme(self):
-        """ The active theme. """
+    def stylesheet(self):
+        """ The active style sheet. """
 
-        if self._theme is None:
-            if self.details.get('Stylesheet'):
-                self._theme = self.details['Stylesheet']
-            elif self.details.get('Template'):
-                self._theme = self.details['Template']
-            else:
-                raise Ai1wmError('error retrieving active theme from package information: {}'.format(self.details))
-        return self._theme
+        return self.details.get('Stylesheet', None)
+
+    @property
+    def template(self):
+        """ The active template. """
+
+        return self.details.get('Template', None)
 
     def validate(self):
         """ Validates the package. """

@@ -3,13 +3,13 @@ from distutils.core import setup
 setup(
     name='ai1wm',
     packages=['ai1wm'],
-    version='1.0',
+    version='1.1',
     license='MIT',
     description='Packs/Unpacks `All-in-One WP Migration` packages',
     author='Sander Wang',
     author_email='sw.online@outlook.com',
     url='https://github.com/sanderwang/ai1wm',
-    download_url='https://github.com/sanderwang/ai1wm/archive/1.0.tar.gz',
+    download_url='https://github.com/sanderwang/ai1wm/archive/1.1.tar.gz',
     keywords=['WordPress', 'All-in-One WP Migration'],
     install_requires=[
         'six',
