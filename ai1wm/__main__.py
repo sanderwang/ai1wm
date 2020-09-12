@@ -6,10 +6,10 @@ from .exception import Ai1wmError
 from .package import Ai1wmPackage
 
 
-def __main():
+if __name__ == '__main__':
     """ Entry of the ai1wm program. """
 
-    parser = argparse.ArgumentParser(description='Pack/Unpack All-in-One WP Migration Packages')
+    parser = argparse.ArgumentParser(prog='ai1wm', description='Pack/Unpack All-in-One WP Migration Packages')
     parser.add_argument('source', help='source path')
     parser.add_argument('target', help='target path')
     args = parser.parse_args()
@@ -21,6 +21,3 @@ def __main():
             Ai1wmPackage(args.source).pack_to(args.target)
     except Ai1wmError as e:
         print(e)
-
-
-__main()
