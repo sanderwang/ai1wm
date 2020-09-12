@@ -3,7 +3,26 @@
 This library provides helper classes for packing/unpacking WordPress [All-in-One WP Migration](
 https://wordpress.org/plugins/all-in-one-wp-migration/) packages.
 
-# Examples
+# Installation
+
+```shell script
+pip install ai1wm
+```
+
+# Usage
+## Unpack a File
+
+```shell script
+python -m ai1wm /path/to/the/source/wpress/file /path/to/the/destination/dir
+```
+
+## Pack a Directory
+
+```shell script
+python -m ai1wm /path/to/the/source/dir /path/to/the/destination/wpress/file
+```
+
+# Coding Examples
 ## Unpack a File
 
 ```python
