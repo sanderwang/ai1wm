@@ -31,7 +31,7 @@ if __name__ == '__main__':
     setup(
         name='ai1wm',
         packages=['ai1wm'],
-        version='1.2.2',
+        version='1.2.3',
         license='MIT',
         description='Packs/Unpacks `All-in-One WP Migration` packages',
         long_description=LONG_DESCRIPTION,
@@ -39,7 +39,7 @@ if __name__ == '__main__':
         author='Sander Wang',
         author_email='sw.online@outlook.com',
         url='https://github.com/sanderwang/ai1wm',
-        download_url='https://github.com/sanderwang/ai1wm/archive/1.2.2.tar.gz',
+        download_url='https://github.com/sanderwang/ai1wm/archive/1.2.3.tar.gz',
         keywords=['WordPress', 'All-in-One WP Migration'],
         classifiers=[
             'Development Status :: 5 - Production/Stable',
