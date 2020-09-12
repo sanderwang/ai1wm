@@ -8,8 +8,8 @@ import collections
 import errno
 import json
 import os
-import six
 import struct
+import sys
 
 
 def s__(obj):
@@ -20,10 +20,11 @@ def s__(obj):
 
     if isinstance(obj, str):
         return obj
-    if six.PY2:
+    v = sys.version_info[0]
+    if v == 2:
         if isinstance(obj, unicode):
             return obj.encode('utf-8')
-    elif six.PY3:
+    elif v == 3:
         if isinstance(obj, bytes):
             return obj.decode('utf-8')
     return str(obj)
@@ -35,7 +36,8 @@ def b__(obj):
     :rtype: bytes
     """
 
-    if six.PY2:
+    v = sys.version_info[0]
+    if v == 2:
         return s__(obj)
 
     if isinstance(obj, bytes):
