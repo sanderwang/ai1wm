@@ -11,8 +11,6 @@ setup(
     url='https://github.com/sanderwang/ai1wm',
     download_url='https://github.com/sanderwang/ai1wm/archive/1.1.tar.gz',
     keywords=['WordPress', 'All-in-One WP Migration'],
-    install_requires=[
-    ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
