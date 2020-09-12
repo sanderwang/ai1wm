@@ -2,6 +2,7 @@
 
 import argparse
 import os
+import sys
 from .exception import Ai1wmError
 from .package import Ai1wmPackage
 
@@ -21,3 +22,6 @@ if __name__ == '__main__':
             Ai1wmPackage(args.source).pack_to(args.target)
     except Ai1wmError as e:
         print(e)
+        sys.exit(-1)
+
+    sys.exit(0)
