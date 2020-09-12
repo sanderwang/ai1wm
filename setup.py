@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='ai1wm',
     packages=['ai1wm'],
-    version='1.1',
+    version='1.2',
     license='MIT',
     description='Packs/Unpacks `All-in-One WP Migration` packages',
     author='Sander Wang',
@@ -24,5 +24,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
 )
